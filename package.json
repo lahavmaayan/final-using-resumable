@@ -1,0 +1,22 @@
+{
+  "name": "final-proj",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/llmaayanll/cloudFinal.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/llmaayanll/cloudFinal/issues"
+  },
+  "homepage": "https://github.com/llmaayanll/cloudFinal#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
