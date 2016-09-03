@@ -128,9 +128,9 @@ def main():
 	nodes = set(userLocationsTuples)
 
 	#create an html file with the centers drawn in google map 
-	mymap = pygmaps.maps(31.7816,35.2192, 16) 
+	mymap = pygmaps.gmap(31.7816,35.2192, 16) 
 	for node in nodes:
-		mymap.addpoint(node[LATITUDE], node[LONGITUDE], "#0000FF")
+		mymap.add_point(node[LATITUDE], node[LONGITUDE], "#0000FF")
 	mymap.draw('./mymap.html') 
 
 	# creating a graph with the centers as is't nodes and there would be an edge according to the moves
