@@ -1,0 +1,23 @@
+{
+  "name": "resumable.js",
+   "version": "0.0.1",
+   "scripts": {
+     "start": "node app.js"
+   },
+  "dependencies": {
+     "body-parser": "latest",
+     "connect-ensure-login": "^0.1.1",
+     "connect-flash": "^0.1.1",
+     "connect-multiparty": "~1.1.0",
+     "cookie-parser": "latest",
+     "ejs": "^2.5.1",
+     "express": "latest",
+     "express-session": "latest",
+     "mongoose": "latest",
+     "morgan": "^1.7.0",
+     "nodeman": "^1.1.2",
+     "passport": "^0.3.2",
+     "passport-google-oauth20": "^1.0.0",
+    "passport-local": "^1.0.0"
+   }
+ }
