@@ -6,6 +6,24 @@ var passport = require('passport');
 var GoogleStrategy = require('passport-google-oauth20').Strategy;
 var PORT = 8080;
 
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/cloud');
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+  console.log('connected');
+});
+
+var schema = mongoose.Schema;
+var userSchema = new schema({
+    userId: Number,
+    email: String,
+    name: String,
+    path: String
+});
+
+var usersModel = mongoose.Model('users', userSchema);
+
 // Configure the Facebook strategy for use by Passport.
 //
 // OAuth 2.0-based strategies require a `verify` function which receives the
@@ -173,7 +191,7 @@ app.get('/uploadJson',
 
     var id = req.user.id;
     resumable.changeDir('./users/' + id);
-    
+
     res.sendFile(__dirname + '/public/bindex.html');
 });
 
@@ -206,7 +224,7 @@ app.get('/resumable.js', function (req, res) {
   // console.log(req.user);
   var fs = require('fs');
   res.setHeader("content-type", "application/javascript");
-  fs.createReadStream("../../resumable.js").pipe(res);
+  fs.createReadStream("resumable.js").pipe(res);
 });
 
 app.listen(PORT, function(){
