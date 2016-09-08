@@ -24,6 +24,8 @@ module.exports = resumable = function(temporaryFolder){
     }catch(e){
       console.log('could not create the new dir');
     }
+    console.log('this is the temporert dir now:');
+    console.log($.temporaryFolder);
     return;
   };
 

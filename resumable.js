@@ -817,6 +817,9 @@
 
     // PUBLIC METHODS FOR RESUMABLE.JS
     $.assignBrowse = function(domNodes, isDirectory){
+      console.log('inside the assignBrowse');
+      console.log(domNodes);
+      console.log(isDirectory);
       if(typeof(domNodes.length)=='undefined') domNodes = [domNodes];
 
       $h.each(domNodes, function(domNode) {
@@ -828,6 +831,7 @@
           input.setAttribute('type', 'file');
           input.style.display = 'none';
           domNode.addEventListener('click', function(){
+            console.log('clicked');
             input.style.opacity = 0;
             input.style.display='block';
             input.focus();
@@ -857,6 +861,7 @@
         }, false);
       });
     };
+
     $.assignDrop = function(domNodes){
       if(typeof(domNodes.length)=='undefined') domNodes = [domNodes];
 
